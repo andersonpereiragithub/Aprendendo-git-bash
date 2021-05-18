@@ -7,13 +7,15 @@ namespace ContaBancaria
     {
         static void Main(string[] args)
         {
-            Conta c = new Conta();
+            Conta c;
 
             Console.Write("Entre o número da conta: ");
-            c.NumConta = int.Parse(Console.ReadLine());
+            int numConta = int.Parse(Console.ReadLine());
             
             Console.Write("Entre o titular da conta: ");
-            c.Nome = Console.ReadLine();
+            string nome = Console.ReadLine();
+
+            c = new Conta(numConta, nome);
 
             Console.Write("Haverá deposito incial (s/n)? ");
             char resp = char.Parse(Console.ReadLine().ToLower());
